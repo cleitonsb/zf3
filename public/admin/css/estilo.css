@@ -1,0 +1,54 @@
+/*
+ *   Estilo principal
+ *
+*/
+
+.page-heading {
+  border-top: 0;
+  padding: 0px 10px 20px 10px;
+}
+
+.profile-element{
+	text-align: center;
+}
+
+.profile-element img{
+	height: 100px;	
+}
+
+.pull-right{
+	margin-left: 5px !important;
+}
+
+/*------------ Preloader ------------------------------------------*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 102;
+  background-color: #f3f3f4;	
+}
+
+.preloader .i-preloader {
+  color: #fff;
+  position: absolute;
+  top: 45%;
+  left: 48%;
+}
+
+.transparente{
+	background:rgba(0,0,0, 0.5) !important;
+}
+
+html, body, #wrapper{
+	height: 100% !important;
+}
+
+#page-wrapper {
+  padding: 0 15px;
+  position: relative !important;  
+  min-height: 100% !important;
+}
+

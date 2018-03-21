@@ -1,0 +1,58 @@
+    
+<?php
+$email = $form->get('email');
+$email->setAttribute('class','form-control');
+$email->setAttribute('placeholder','Email');
+$email->setLabelAttributes(['class' => 'sr-only']);
+
+$senha = $form->get('senha');
+$senha->setAttribute('class','form-control');
+$senha->setAttribute('placeholder','Senha');
+$senha->setLabelAttributes(['class' => 'sr-only']);
+
+$submit = $form->get('btnentrar');
+$submit->setAttribute('class','btn btn-primary block full-width m-b');
+
+$form->setAttribute('action', $this->url('home'))
+     ->setAttribute('class', 'm-t');
+
+$form->prepare();
+?>
+
+<div class="middle-box text-center loginscreen animated fadeInDown">
+    <div>
+        <div>
+            <h1 class="logo-name">CA</h1>    
+        </div>
+        
+        <p>Acesso ao SysCA</p>
+        
+        <?php echo $this->form()->openTag($form); ?>
+		        
+        <div class="form-group" >
+            <?=$this->formLabel($email);?>
+            <?=$this->formElement($email);?>
+            
+            <span id="emailHelper" class="help-block"></span>    
+        </div>
+
+        <div class="form-group" >
+            <?=$this->formLabel($senha);?>
+            <?=$this->formElement($senha);?>
+                        
+            <span id="senhaHelper" class="help-block"></span>
+        </div>
+            
+		<?php echo $this->formElement($submit);?>
+		
+            <a href="javascript:"><small>Esqueci a senha</small></a>
+            <p class="text-muted text-center"><small>Você ainda não é cadastrado?</small></p>
+            <a class="btn btn-sm btn-white btn-block" href="javascript:">Criar uma conta</a>
+        
+        <?php echo $this->form()->closeTag();?>
+
+        <p class="m-t"> <small>Sistema de gerenciamento <a href="http://casolucoes.com.br" target="_blank">CA Soluções</a></small> </p>
+    </div>
+</div>
+
+<?php $this->headScript()->prependFile($this->basePath('admin/js/login.js'))?>

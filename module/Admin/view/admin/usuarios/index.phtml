@@ -1,0 +1,50 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Usuários</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo $this->url('admin')?>">Painel</a>
+            </li>
+            <li class="active">
+                <strong>Usuários</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-8">
+        <div class="title-action">
+            <a href="<?=$this->url('admin-usuarios', ['action'=>'cadastro'] );?>" class="btn btn-primary" >Novo cadastro</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Perfil</th>
+                            <th>E-mail</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($usuarios as $usuario){ ?>
+                        <tr class="user-cadastro" data-id="<?= $this->escapeHtml($usuario->idusuario); ?>">
+                            <td><?= $this->escapeHtml($usuario->idusuario); ?></td>
+                            <td><?= $this->escapeHtml($usuario->nome); ?></td>
+                            <td></td>
+                            <td><?= $this->escapeHtml($usuario->email); ?></td>
+                        </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>                        
+        </div>
+    </div>
+</div>
+
+<?php $this->headScript()->prependFile($this->basePath('admin/js/usuarios.js'))?>

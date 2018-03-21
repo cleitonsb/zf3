@@ -1,0 +1,36 @@
+<?php echo $this->doctype() ?>
+<!DOCTYPE html>
+<html>
+
+    <head>
+    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>CA Soluções</title>
+    
+    	<?php echo $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+    	                    ->prependStylesheet($this->basePath('admin/css/estilo.css'))
+                        	->prependStylesheet($this->basePath('admin/css/style.min.css'))
+                        	->prependStylesheet($this->basePath('css/animate.css'))
+                        	->prependStylesheet($this->basePath('font-awesome/css/font-awesome.min.css'))
+                            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>        
+    </head>
+
+    <body class="gray-bg">
+
+        <?php echo $this->content; ?>
+
+    	<?php echo $this->headScript()
+            //-- Mainly scripts -->
+    	    ->prependFile($this->basePath('admin/js/main.bas.js')) 
+    	    ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-2.1.1.js'))            
+        ?>
+        
+        <div class="preloader transparente" id="loader">
+            <i class="fa fa-cog fa-spin fa-3x fa-fw i-preloader"></i>			
+        </div>
+	</body>
+</html>
